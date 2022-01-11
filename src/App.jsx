@@ -8,16 +8,13 @@ function App() {
   
   const [images, setImages] = useState([])
 
-  function fetchImages(){
-    return fetch('http://localhost:3000/images')
+  useEffect(()=>{
+    fetch('http://localhost:3000/images')
     .then(resp => resp.json())
     .then(images => setImages(images))
-  } 
-
-  useEffect(()=>{
-    fetchImages()
   },[])
 
+  
   function addLikes(article){
     const updatedImages = JSON.parse(JSON.stringify(images))
     const match = updatedImages.find(target => target.id === article.id)
@@ -53,7 +50,6 @@ function App() {
       setImages(updatedImages)
     })
   }
-
   function deleteComment(commentId,articleid){
 
     const updatedImages = JSON.parse(JSON.stringify(images))
@@ -70,11 +66,30 @@ function App() {
     })
 
   }
+  function addImage(title,imageUrl){
+    const updatedImages = JSON.parse(JSON.stringify(images))
+    fetch(`http://localhost:3000/images`,{
+      method:"POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body:JSON.stringify({
+        title: title,
+        image: imageUrl,
+        likes: 0,
+      })
+    }).then(resp=> resp.json()).then(newImage => {
+      updatedImages.push(newImage)
+      setImages(updatedImages)
+    })
+
+  }
+
 
   return (
       <>
         <Header />
-        <AddImageForm />
+        <AddImageForm addImage={addImage} />
         {
           images? images.map( (article) =>{
             return <ImageContainer article = {article} addComment={addComment} deleteComment={deleteComment} addLikes= {addLikes} />

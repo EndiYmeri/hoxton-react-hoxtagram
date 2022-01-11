@@ -3,14 +3,26 @@
     {
       "id": 1,
       "title": "Coder dog",
-      "likes": 21,
+      "likes": 22,
       "image": "./assets/coder-dog.png"
     },
     {
       "id": 2,
       "title": "Coder cats",
-      "likes": 11,
+      "likes": 14,
       "image": "./assets/coder-cat.jpeg"
+    },
+    {
+      "title": "asdasdas",
+      "image": "https://www.cnet.com/a/img/Tpb3FtkoNsKgyVG6KEKNaVq6JT0=/940x0/2021/11/29/82fb5acc-9155-4844-be9c-e0831a6b837c/nowayhome.jpg",
+      "id": 3,
+      "likes": 5
+    },
+    {
+      "title": "Spiedy Boy",
+      "image": "https://www.cnet.com/a/img/Tpb3FtkoNsKgyVG6KEKNaVq6JT0=/940x0/2021/11/29/82fb5acc-9155-4844-be9c-e0831a6b837c/nowayhome.jpg",
+      "likes": 4,
+      "id": 4
     }
   ],
   "comments": [
@@ -26,13 +38,23 @@
     },
     {
       "imageId": 1,
-      "content": "Hes a good boy!!",
-      "id": 5
+      "content": "What a qtpie",
+      "id": 6
     },
     {
       "imageId": 1,
-      "content": "What a qtpie",
-      "id": 6
+      "content": "What a nice dog! ",
+      "id": 7
+    },
+    {
+      "imageId": 3,
+      "content": "Hmm",
+      "id": 8
+    },
+    {
+      "imageId": 4,
+      "content": "NIce one",
+      "id": 9
     }
   ]
 }

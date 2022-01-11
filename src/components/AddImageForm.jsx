@@ -1,10 +1,20 @@
-function AddImageForm(){
+function AddImageForm({addImage}){
     return(
-        <form action="" className="add-image-form">
-            <input type="text" name="title" id="" />
-            <input type="url" name="url" id="" />
-            <button type="submit">Add Image</button>
-        </form>
+        <>
+            <h3>Add a new post?</h3>
+            <form
+                className="add-image-form"
+                onSubmit={(e)=>{
+                    e.preventDefault()
+                    // @ts-ignore
+                    addImage(e.target.title.value, e.target.url.value)
+                }}
+                >
+                <input type="text" name="title" placeholder="Add Image Title" id="" required />
+                <input type="url" name="url" placeholder="Add Image Url" id="" required />
+                <button type="submit">Add Image</button>
+            </form>
+        </>
     )
 }
 export default AddImageForm

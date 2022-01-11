@@ -1,7 +1,7 @@
 function Comments({article, addComment, deleteComment}){
     return (
         <ul className="comments">
-            {article.comments.map(comment=>{
+            {article.comments? article.comments.map(comment=>{
                 return <li>
                             {comment.content}
                             <span
@@ -10,7 +10,7 @@ function Comments({article, addComment, deleteComment}){
                                 }}
                             >X</span>
                         </li>
-            })}
+            }): <></>}
             <form className="comment-form"
                     onSubmit={(e)=>{
                         e.preventDefault()
