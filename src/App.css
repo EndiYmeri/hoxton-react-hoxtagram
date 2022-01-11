@@ -84,7 +84,7 @@ img {
 .comments {
     list-style-type: none;
     margin-left: 0;
-    padding-left: 10px;
+    padding-left: 0px;
     font-size: 0.85rem;
     border-top: 1px solid #00000020;
 }
@@ -92,6 +92,16 @@ img {
 .comments li {
     margin: 2px 0;
     letter-spacing: 0.2px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    padding: .3rem 1rem;
+    border-bottom: 1px solid #22222210;
+}
+
+.comments li span {
+    cursor: pointer;
+    color: red;
 }
 
 .comment-form {

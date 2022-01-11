@@ -1,7 +1,7 @@
 import Comments from "./Comments"
 import LikeSection from "./LikesSection"
 
-function ImageContainer({article, addComment}){
+function ImageContainer({article, addComment, deleteComment, addLikes}){
 
     const src = article.image.startsWith('./assets') ? 
     `src/${article.image.slice(2, article.image.length)}` // removes the './' and prepends 'src'. Basically: `./assets/image-name.png` => `src/assets/image-name.png`
@@ -14,8 +14,8 @@ function ImageContainer({article, addComment}){
                 <h2 className="title">{article.title}</h2>
                 <img src={src} className="image" />
 
-                <LikeSection likes={article.likes}/>
-                <Comments article ={article} addComment={addComment}/>
+                <LikeSection article={article} addLikes={addLikes}/>
+                <Comments article ={article} addComment={addComment} deleteComment={deleteComment} />
             </article>
       </section>
     )
